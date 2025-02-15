@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Radio Online</title>
+    <link rel="stylesheet" href="assets/index.css">
+    <!-- Agrega Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Script de EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+</head>
+<body>
+    <header class="header">
+        <h1>Bienvenido a Mi Radio Online</h1>
+        <p>Disfruta de la mejor música en vivo</p>
+    </header>
+
+    <main class="container">
+        <!-- Sección de la Radio -->
+        <section class="radio-section">
+            <h2>Escucha en Vivo</h2>
+            <div class="radio-player">
+                <iframe src="https://radiopy.duckdns.org/public/radiotv/embed?theme=dark" frameborder="0" allowtransparency="true" style="width: 100%; min-height: 150px; border: 0;"></iframe>
+            </div>
+        </section>
+
+        <!-- Sección de Información -->
+        <section class="info-section">
+            <h2>Sobre Nosotros</h2>
+            <p>
+                Somos una radio online dedicada a ofrecer la mejor música y contenido para nuestros oyentes. 
+                ¡Síguenos en nuestras redes sociales y no te pierdas ninguna novedad!
+            </p>
+            <div class="social-links">
+                <!-- Iconos de Redes Sociales -->
+                <a href="https://facebook.com/profile.php?id=100013220742495" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://instagram.com/lllniko.oviedolll/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/JoseOvi26319832" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://youtube.com/@nicolasoviedo9449" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+        </section>
+
+        <!-- Sección de Contacto -->
+        <section class="contact-section">
+            <h2>Contacto</h2>
+            <form id="contactForm">
+                <label for="message">Escribe tu mensaje:</label>
+                <textarea id="message" name="message" rows="5" placeholder="Escribe aquí tu mensaje..." required></textarea>
+                <button type="submit" id="contactButton">Enviar Mensaje</button>
+            </form>
+            <p id="contactMessage" class="hidden">Gracias por contactarnos. ¡Te responderemos pronto!</p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2023 Mi Radio Online. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Botón Flotante de WhatsApp -->
+    <a href="https://wa.me/+595993539237" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="assets/index.js"></script>
+</body>
+</html>
