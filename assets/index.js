@@ -3,7 +3,7 @@ emailjs.init('11w83xZg0PuZCavgl');
 
 // Función para obtener el clima
 async function getWeather() {
-    const API_KEY = 'cfddc969950a131390682109a7515e98';
+    const API_KEY = 'a97547e3a7a080e3d45a126209263c17';
     const city = 'Asuncion';
     const country = 'PY';
 
