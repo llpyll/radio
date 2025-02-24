@@ -90,7 +90,116 @@ body {
     margin: 0 auto;
     padding: 20px;
 }
+/* Ajustes para móviles */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2.5rem;
+    }
 
+    .header p {
+        font-size: 1.2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    .radio-section, .info-section, .contact-section, .services-section, .advertising-section {
+        padding: 20px;
+        margin-bottom: 30px;
+    }
+
+    .service-card, .advertising-card {
+        padding: 20px;
+    }
+
+    .package {
+        min-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .social-links {
+        gap: 15px;
+    }
+
+    .social-links a {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+        bottom: 20px;
+        right: 20px;
+    }
+}.services-section {
+    text-align: center;
+    position: relative;
+    padding-top: 20px;
+}
+
+.service-icon {
+    font-size: 4rem;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    display: block;
+}
+.services-section h2 {
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.services-section h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+.service-card {
+    text-align: center;
+    padding: 30px;
+}
+.service-card i {
+    font-size: 4rem;
+    color: var(--secondary-color);
+    margin-bottom: 30px;
+    display: block;
+    text-align: center;
+}
+.service-card h2 {
+    margin-top: 0;
+}
+.service-card {
+    text-align: center;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.service-card ul {
+    text-align: left;
+    padding-left: 20px;
+    margin: 20px 0;
+}
+.service-card ul li {
+    margin: 10px 0;
+    position: relative;
+    padding-left: 25px;
+}
+.service-card ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+}
+.service-card .cta-button {
+    margin-top: 20px;
+}
 /* Secciones */
 .radio-section, .info-section, .contact-section, .services-section {
     margin-bottom: 60px;
@@ -102,7 +211,6 @@ body {
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     transition: transform 0.3s ease;
 }
-
 .radio-section:hover, .services-section:hover {
     transform: translateY(-5px);
 }
@@ -142,9 +250,12 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     margin: 20px 0;
 }
+/* Sección de Publicidad */
+.advertising-section {
+    margin-bottom: 60px;
+}
 
-/* Service Card */
-.service-card {
+.advertising-card {
     background: linear-gradient(145deg, rgba(46, 49, 146, 0.1), rgba(46, 49, 146, 0.2));
     padding: 30px;
     border-radius: 15px;
@@ -153,32 +264,56 @@ body {
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 }
 
-.service-card i {
+.advertising-card i {
     font-size: 3rem;
     color: var(--secondary-color);
     margin-bottom: 20px;
 }
 
-.service-card ul {
+.ad-packages {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 30px 0;
+}
+.package {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+    transition: transform 0.3s ease;
+}
+.package:hover {
+    transform: translateY(-5px);
+}
+.package.featured {
+    border: 2px solid var(--secondary-color);
+    position: relative;
+}
+.package h4 {
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+.package ul {
     list-style: none;
     padding: 0;
     text-align: left;
-    margin: 20px 0;
 }
-
-.service-card ul li {
+.package ul li {
     margin: 10px 0;
     padding-left: 25px;
     position: relative;
 }
-
-.service-card ul li::before {
+.package ul li::before {
     content: '✓';
     position: absolute;
     left: 0;
     color: var(--secondary-color);
 }
-
 /* Social Links */
 .social-links {
     display: flex;
@@ -186,7 +321,6 @@ body {
     gap: 30px;
     margin-top: 20px;
 }
-
 .social-links a {
     color: var(--text-light);
     font-size: 2rem;
@@ -199,7 +333,6 @@ body {
     justify-content: center;
     transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease;
 }
-
 .social-links a:hover {
     color: var(--secondary-color);
     transform: scale(1.2) rotate(360deg);
@@ -215,7 +348,6 @@ body {
     cursor: pointer;
     margin-top: 10px;
 }
-
 .admin-modal {
     display: none;
     position: fixed;
@@ -226,7 +358,6 @@ body {
     background: rgba(0,0,0,0.7);
     z-index: 1000;
 }
-
 .modal-content {
     background: var(--background-dark);
     padding: 20px;
@@ -237,7 +368,6 @@ body {
     transform: translate(-50%, -50%);
     min-width: 300px;
 }
-
 .modal-content input {
     width: 100%;
     padding: 10px;
@@ -247,7 +377,6 @@ body {
     background: rgba(255,255,255,0.1);
     color: white;
 }
-
 .modal-content button {
     margin: 5px;
     padding: 8px 15px;
@@ -257,7 +386,6 @@ body {
     background: var(--secondary-color);
     color: white;
 }
-
 .modal-content input {
     width: 100%;
     padding: 10px;
@@ -267,7 +395,6 @@ body {
     background: rgba(255,255,255,0.1);
     color: white;
 }
-
 .modal-content button {
     margin: 5px;
     padding: 8px 15px;
@@ -282,7 +409,6 @@ body {
     max-width: 600px;
     margin: 0 auto;
 }
-
 #contactForm textarea {
     width: 100%;
     padding: 15px;
@@ -295,12 +421,10 @@ body {
     transition: border-color 0.3s ease;
     margin-bottom: 20px;
 }
-
 #contactForm textarea:focus {
     border-color: var(--secondary-color);
     outline: none;
 }
-
 .cta-button, #contactForm button {
     background: linear-gradient(45deg, var(--accent-color), #e67e22);
     color: white;
@@ -314,7 +438,6 @@ body {
     text-decoration: none;
     display: inline-block;
 }
-
 .cta-button:hover, #contactForm button:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
@@ -339,45 +462,37 @@ body {
     position: relative;
     margin-bottom: 20px;
 }
-
 .news-ticker-container {
     max-width: 100%;
     overflow: hidden;
 }
-
 .ticker-wrap {
     width: 100%;
     overflow: hidden;
 }
-
 .ticker {
     display: inline-block;
     white-space: nowrap;
     animation: ticker 30s linear infinite;
 }
-
 .ticker-item {
     display: inline-block;
     padding: 0 30px;
     color: var(--text-light);
     font-size: 1rem;
 }
-
 .ticker-item:not(:last-child)::after {
     content: "•";
     margin-left: 30px;
     color: var(--secondary-color);
 }
-
 @keyframes ticker {
     0% { transform: translateX(100%); }
     100% { transform: translateX(-100%); }
 }
-
 .ticker:hover {
     animation-play-state: paused;
 }
-
 /* Footer */
 .footer {
     text-align: center;
@@ -385,7 +500,6 @@ body {
     background: var(--primary-color);
     color: rgba(255,255,255,0.8);
 }
-
 /* WhatsApp Float */
 .whatsapp-float {
     position: fixed;
@@ -404,12 +518,10 @@ body {
     animation: pulse 2s infinite;
     font-size: 2rem;
 }
-
 .whatsapp-float:hover {
     transform: scale(1.1);
     box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
 }
-
 /* Títulos de secciones */
 h2 {
     font-size: 2.2rem;
@@ -418,7 +530,6 @@ h2 {
     text-align: center;
     font-weight: 600;
 }
-
 h3 {
     font-size: 1.8rem;
     margin-bottom: 1rem;
