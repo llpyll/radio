@@ -106,7 +106,35 @@ body {
 .radio-section:hover, .services-section:hover {
     transform: translateY(-5px);
 }
+/* Widget del Clima */
+.weather-widget {
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
 
+.weather-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+#weather-icon {
+    font-size: 3rem;
+    color: var(--secondary-color);
+}
+
+.weather-details h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.weather-details p {
+    margin: 5px 0;
+    color: var(--text-light);
+}
 /* Radio Player */
 .radio-player {
     border-radius: 15px;
@@ -177,7 +205,78 @@ body {
     transform: scale(1.2) rotate(360deg);
     background: rgba(255, 255, 255, 0.2);
 }
+/* Estilos para el modal de admin */
+.admin-button {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
 
+.admin-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 1000;
+}
+
+.modal-content {
+    background: var(--background-dark);
+    padding: 20px;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 300px;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid var(--secondary-color);
+    background: rgba(255,255,255,0.1);
+    color: white;
+}
+
+.modal-content button {
+    margin: 5px;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: var(--secondary-color);
+    color: white;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid var(--secondary-color);
+    background: rgba(255,255,255,0.1);
+    color: white;
+}
+
+.modal-content button {
+    margin: 5px;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: var(--secondary-color);
+    color: white;
+}
 /* Formulario de Contacto */
 #contactForm {
     max-width: 600px;
@@ -219,6 +318,64 @@ body {
 .cta-button:hover, #contactForm button:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+}
+/* Banner de Noticias */
+/* Eliminar estas secciones si existen */
+/* News Ticker */
+.news-ticker,
+.news-ticker-container,
+.ticker-wrap,
+.ticker,
+.ticker-item,
+.admin-button,
+.admin-modal,
+.modal-content {
+    /* Eliminar estos estilos */
+}
+.news-ticker {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 0;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.news-ticker-container {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.ticker-wrap {
+    width: 100%;
+    overflow: hidden;
+}
+
+.ticker {
+    display: inline-block;
+    white-space: nowrap;
+    animation: ticker 30s linear infinite;
+}
+
+.ticker-item {
+    display: inline-block;
+    padding: 0 30px;
+    color: var(--text-light);
+    font-size: 1rem;
+}
+
+.ticker-item:not(:last-child)::after {
+    content: "•";
+    margin-left: 30px;
+    color: var(--secondary-color);
+}
+
+@keyframes ticker {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+.ticker:hover {
+    animation-play-state: paused;
 }
 
 /* Footer */
