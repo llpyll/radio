@@ -65,6 +65,41 @@ body {
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); /* Forma inclinada en la parte inferior */
     margin-bottom: 40px; /* Espacio inferior */
 }
+
+.header-content {
+    position: relative;
+    z-index: 1;
+}
+
+.header-icons {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.header-icons i {
+    font-size: 2.5rem;
+    color: var(--text-light);
+    opacity: 0.9;
+}
+
+.animate-pulse {
+    animation: pulse 2s infinite;
+}
+
+.live-indicator {
+    color: var(--accent-color);
+    font-size: 0.8rem;
+    margin-right: 8px;
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.3; }
+    100% { opacity: 1; }
+}
 .header::before {
     content: ''; /* Elemento decorativo vacío */
     position: absolute; /* Posicionado sobre el header */
