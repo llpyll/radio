@@ -1,537 +1,453 @@
-/* Variables de colores modernos */
+/* ============================
+   1. VARIABLES DE COLORES MODERNOS
+   ============================ */
+/* Define colores y gradientes reutilizables en toda la página */
 :root {
-    --primary-color: #2c3e50;
-    --secondary-color: #3498db;
-    --accent-color: #e74c3c;
-    --background-dark: #1a1a1a;
-    --text-light: #ecf0f1;
-    --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    --primary-color: #2c3e50; /* Color principal oscuro para fondos y elementos */
+    --secondary-color: #3498db; /* Color secundario azul para detalles y énfasis */
+    --accent-color: #e74c3c; /* Color de acento rojo para botones y destacados */
+    --background-dark: #1a1a1a; /* Fondo oscuro base de la página */
+    --text-light: #ecf0f1; /* Color claro para texto legible sobre fondos oscuros */
+    --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); /* Gradiente para fondos decorativos */
 }
 
-/* Estilos Generales */
+/* ============================
+   2. ESTILOS GENERALES
+   ============================ */
+/* Configuración básica del cuerpo de la página */
 body {
-    font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(to bottom, var(--background-dark), #2c3e50);
-    color: var(--text-light);
-    line-height: 1.6;
-    min-height: 100vh;
+    font-family: 'Poppins', 'Segoe UI', Arial, sans-serif; /* Fuentes usadas en la página */
+    margin: 0; /* Elimina márgenes por defecto */
+    padding: 0; /* Elimina relleno por defecto */
+    background: linear-gradient(to bottom, var(--background-dark), #2c3e50); /* Fondo con gradiente vertical */
+    color: var(--text-light); /* Color del texto principal */
+    line-height: 1.6; /* Espaciado entre líneas para legibilidad */
+    min-height: 100vh; /* Asegura que el cuerpo ocupe toda la altura de la ventana */
 }
 
-/* Animaciones */
+/* ============================
+   3. ANIMACIONES
+   ============================ */
+/* Define animaciones para transiciones visuales */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; transform: translateY(20px); } /* Inicio: invisible y desplazado hacia abajo */
+    to { opacity: 1; transform: translateY(0); } /* Final: visible y en posición original */
 }
-
 @keyframes slideIn {
-    from { transform: translateX(-100%); }
-    to { transform: translateX(0); }
+    from { transform: translateX(-100%); } /* Inicio: fuera de la pantalla a la izquierda */
+    to { transform: translateX(0); } /* Final: en posición original */
 }
-
 @keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
+    0% { transform: scale(1); } /* Inicio: tamaño normal */
+    50% { transform: scale(1.1); } /* Mitad: aumenta ligeramente */
+    100% { transform: scale(1); } /* Final: vuelve al tamaño normal */
 }
-
 .animate-fade-in {
-    animation: fadeIn 1s ease-out;
+    animation: fadeIn 1s ease-out; /* Aplica animación de aparición suave */
 }
-
 .animate-title {
-    animation: slideIn 1s ease-out;
+    animation: slideIn 1s ease-out; /* Aplica animación de deslizamiento para títulos */
 }
-
 .animate-subtitle {
-    animation: fadeIn 1.5s ease-out;
+    animation: fadeIn 1.5s ease-out; /* Aplica animación de aparición más lenta para subtítulos */
 }
 
-/* Header Mejorado */
+/* ============================
+   4. HEADER
+   ============================ */
+/* Estilos del encabezado superior */
 .header {
-    text-align: center;
-    padding: 60px 20px;
-    background: var(--gradient-primary);
-    position: relative;
-    overflow: hidden;
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-    margin-bottom: 40px;
+    text-align: center; /* Centra el contenido */
+    padding: 60px 20px; /* Relleno vertical y horizontal */
+    background: var(--gradient-primary); /* Fondo con gradiente definido */
+    position: relative; /* Posicionamiento relativo para elementos internos */
+    overflow: hidden; /* Oculta contenido que desborde */
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); /* Forma inclinada en la parte inferior */
+    margin-bottom: 40px; /* Espacio inferior */
 }
-
 .header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(45deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 100%);
+    content: ''; /* Elemento decorativo vacío */
+    position: absolute; /* Posicionado sobre el header */
+    top: 0; left: 0; right: 0; bottom: 0; /* Cubre todo el header */
+    background: linear-gradient(45deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 100%); /* Sombra gradiente decorativa */
 }
-
 .header h1 {
-    margin: 0;
-    font-size: 3.5rem;
-    font-weight: 700;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-    position: relative;
+    margin: 0; /* Elimina márgenes por defecto */
+    font-size: 3.5rem; /* Tamañogrande del título */
+    font-weight: 700; /* Grosor de fuente bold */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3); /* Sombra para destacar el texto */
+    position: relative; /* Posicionamiento relativo para z-index */
 }
-
 .header p {
-    font-size: 1.4rem;
-    margin-top: 10px;
-    color: rgba(255,255,255,0.9);
-    position: relative;
+    font-size: 1.4rem; /* Tamaño del subtítulo */
+    margin-top: 10px; /* Espacio superior */
+    color: rgba(255,255,255,0.9); /* Color blanco con ligera transparencia */
+    position: relative; /* Posicionamiento relativo para z-index */
 }
 
-/* Contenedor principal */
+/* ============================
+   5. CONTAINER
+   ============================ */
+/* Contenedor principal para centrar el contenido */
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-/* Ajustes para móviles */
-@media (max-width: 768px) {
-    .header h1 {
-        font-size: 2.5rem;
-    }
-
-    .header p {
-        font-size: 1.2rem;
-    }
-
-    h2 {
-        font-size: 1.8rem;
-    }
-
-    h3 {
-        font-size: 1.5rem;
-    }
-
-    .radio-section, .info-section, .contact-section, .services-section, .advertising-section {
-        padding: 20px;
-        margin-bottom: 30px;
-    }
-
-    .service-card, .advertising-card {
-        padding: 20px;
-    }
-
-    .package {
-        min-width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .social-links {
-        gap: 15px;
-    }
-
-    .social-links a {
-        width: 50px;
-        height: 50px;
-        font-size: 1.5rem;
-    }
-
-    .whatsapp-float {
-        width: 50px;
-        height: 50px;
-        font-size: 1.5rem;
-        bottom: 20px;
-        right: 20px;
-    }
-}.services-section {
-    text-align: center;
-    position: relative;
-    padding-top: 20px;
+    max-width: 1200px; /* Ancho máximo del contenido */
+    margin: 0 auto; /* Centra horizontalmente */
+    padding: 20px; /* Relleno interno */
 }
 
-.service-icon {
-    font-size: 4rem;
-    color: var(--secondary-color);
-    margin-bottom: 15px;
-    display: block;
-}
-.services-section h2 {
-    margin-top: 0;
-    margin-bottom: 30px;
-}
-
-.services-section h3 {
-    margin-top: 0;
-    margin-bottom: 20px;
-}
-.service-card {
-    text-align: center;
-    padding: 30px;
-}
-.service-card i {
-    font-size: 4rem;
-    color: var(--secondary-color);
-    margin-bottom: 30px;
-    display: block;
-    text-align: center;
-}
-.service-card h2 {
-    margin-top: 0;
-}
-.service-card {
-    text-align: center;
-    padding: 40px 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.service-card ul {
-    text-align: left;
-    padding-left: 20px;
-    margin: 20px 0;
-}
-.service-card ul li {
-    margin: 10px 0;
-    position: relative;
-    padding-left: 25px;
-}
-.service-card ul li::before {
-    content: '✓';
-    position: absolute;
-    left: 0;
-    color: var(--secondary-color);
-}
-.service-card .cta-button {
-    margin-top: 20px;
-}
-/* Secciones */
+/* ============================
+   6. RADIO SECTION
+   ============================ */
+/* Estilos de la sección de radio en vivo */
 .radio-section, .info-section, .contact-section, .services-section {
-    margin-bottom: 60px;
-    padding: 30px;
-    border-radius: 15px;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    transition: transform 0.3s ease;
+    margin-bottom: 60px; /* Espacio inferior entre secciones */
+    padding: 30px; /* Relleno interno */
+    border-radius: 15px; /* Bordes redondeados */
+    background: rgba(255, 255, 255, 0.05); /* Fondo semitransparente */
+    backdrop-filter: blur(10px); /* Efecto de desenfoque detrás */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Borde sutil */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); /* Sombra para profundidad */
+    transition: transform 0.3s ease; /* Transición suave al interactuar */
 }
 .radio-section:hover, .services-section:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px); /* Eleva la sección al pasar el mouse */
 }
-/* Widget del Clima */
-.weather-widget {
-    margin-top: 20px;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
-}
-
-.weather-info {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-#weather-icon {
-    font-size: 3rem;
-    color: var(--secondary-color);
-}
-
-.weather-details h3 {
-    margin: 0;
-    font-size: 1.2rem;
-}
-
-.weather-details p {
-    margin: 5px 0;
-    color: var(--text-light);
-}
-/* Radio Player */
 .radio-player {
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    margin: 20px 0;
+    border-radius: 15px; /* Bordes redondeados del reproductor */
+    overflow: hidden; /* Oculta desbordamiento */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Sombra para destacar */
+    margin: 20px 0; /* Espacio arriba y abajo */
 }
-/* Sección de Publicidad */
+
+/* ============================
+   7. WEATHER WIDGET
+   ============================ */
+/* Estilos del widget del clima */
+.weather-widget {
+    margin-top: 20px; /* Espacio superior */
+    padding: 20px; /* Relleno interno */
+    background: rgba(255, 255, 255, 0.1); /* Fondo semitransparente */
+    border-radius: 15px; /* Bordes redondeados */
+    backdrop-filter: blur(10px); /* Efecto de desenfoque */
+}
+.weather-info {
+    display: flex; /* Alinea elementos horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    gap: 20px; /* Espacio entre elementos */
+}
+#weather-icon {
+    font-size: 3rem; /* Tamaño del ícono del clima */
+    color: var(--secondary-color); /* Color azul definido */
+}
+.weather-details h3 {
+    margin: 0; /* Elimina márgenes por defecto */
+    font-size: 1.2rem; /* Tamaño del título de ciudad */
+}
+.weather-details p {
+    margin: 5px 0; /* Espacio vertical entre párrafos */
+    color: var(--text-light); /* Color claro para texto */
+}
+
+/* ============================
+   8. SERVICES SECTION
+   ============================ */
+/* Estilos de la sección de servicios */
+
+.service-icon {
+    font-size: 4rem; /* Tamaño grande del ícono */
+    color: var(--secondary-color); /* Color azul */
+    margin-bottom: 15px; /* Espacio inferior */
+    display: block; /* Ocupa toda la línea */
+}
+
+/* Estilos de la sección de servicios */
+.services-section {
+    text-align: center; /* Centra el contenido */
+    position: relative; /* Posicionamiento relativo para elementos internos */
+    padding-top: 20px; /* Relleno superior */
+
+}
+
+.services-section h2 {
+    margin-top: 0; /* Elimina margen superior */
+    margin-bottom: 30px; /* Espacio inferior */
+
+}
+.services-section h3 {
+    margin-top: 0; /* Elimina margen superior */
+
+}
+
+
+
+.services-section ul {
+    list-style: none; /* Elimina viñetas por defecto */
+    padding: 0; /* Elimina relleno */
+    text-align: center /* Alinea texto a la izquierda */
+}
+.services-section ul li {
+    margin: 10px 0; /* Espacio vertical entre ítems */
+    padding-left: 25px; /* Espacio para el ícono */
+    position: relative; /* Posicionamiento relativo para el ícono */
+}
+.services-section ul li::before {
+    content: '✓'; /* Agrega una marca de verificación */
+    position: center; /* Posiciona el ícono */
+    left:0; /* Alineado a la izquierda */
+    color: var(--secondary-color); /* Color azul */
+}
+
+
+.service-card {
+    text-align: center; /* Centra el contenido */
+    padding: 30px; /* Relleno interno */
+}
+.service-card i {
+    font-size: 4rem; /* Tamaño del ícono */
+    color: var(--secondary-color); /* Color azul */
+    margin-bottom: 30px; /* Espacio inferior */
+    display: block; /* Ocupa toda la línea */
+    text-align: center; /* Centra horizontalmente */
+}
+.service-card h2 {
+    margin-top: 0; /* Elimina margen superior */
+}
+
+/* ============================
+   9. ADVERTISING SECTION
+   ============================ */
+/* Estilos de la sección de publicidad */
 .advertising-section {
-    margin-bottom: 60px;
+    margin-bottom: 60px; /* Espacio inferior */
 }
-
 .advertising-card {
-    background: linear-gradient(145deg, rgba(46, 49, 146, 0.1), rgba(46, 49, 146, 0.2));
-    padding: 30px;
-    border-radius: 15px;
-    text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    background: linear-gradient(145deg, rgba(46, 49, 146, 0.1), rgba(46, 49, 146, 0.2)); /* Fondo con gradiente */
+    padding: 30px; /* Relleno interno */
+    border-radius: 15px; /* Bordes redondeados */
+    text-align: center; /* Centra el contenido */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Borde sutil */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); /* Sombra para profundidad */
 }
-
 .advertising-card i {
-    font-size: 3rem;
-    color: var(--secondary-color);
-    margin-bottom: 20px;
+    font-size: 3rem; /* Tamaño del ícono */
+    color: var(--secondary-color); /* Color azul */
+    margin-bottom: 20px; /* Espacio inferior */
 }
-
 .ad-packages {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 30px 0;
+    display: flex; /* Alinea paquetes horizontalmente */
+    gap: 20px; /* Espacio entre paquetes */
+    justify-content: center; /* Centra los paquetes */
+    flex-wrap: wrap; /* Permite que se ajusten en varias líneas */
+    margin: 30px 0; /* Espacio vertical */
 }
 .package {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 20px;
-    border-radius: 10px;
-    flex: 1;
-    min-width: 250px;
-    max-width: 300px;
-    transition: transform 0.3s ease;
+    background: rgba(255, 255, 255, 0.05); /* Fondo semitransparente */
+    padding: 20px; /* Relleno interno */
+    border-radius: 10px; /* Bordes redondeados */
+    flex: 1; /* Crece para llenar espacio disponible */
+    min-width: 250px; /* Ancho mínimo */
+    max-width: 300px; /* Ancho máximo */
+    transition: transform 0.3s ease; /* Transición suave al interactuar */
 }
 .package:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px); /* Eleva al pasar el mouse */
 }
 .package.featured {
-    border: 2px solid var(--secondary-color);
-    position: relative;
+    border: 2px solid var(--secondary-color); /* Borde azul para paquete destacado */
+    position: relative; /* Posicionamiento relativo */
 }
 .package h4 {
-    color: var(--secondary-color);
-    margin-bottom: 15px;
-    font-size: 1.2rem;
+    color: var(--secondary-color); /* Color azul para título */
+    margin-bottom: 15px; /* Espacio inferior */
+    font-size: 1.2rem; /* Tamaño del título */
 }
 .package ul {
-    list-style: none;
-    padding: 0;
-    text-align: left;
+    list-style: none; /* Elimina viñetas por defecto */
+    padding: 0; /* Elimina relleno */
+    text-align: left; /* Alinea texto a la izquierda */
 }
 .package ul li {
-    margin: 10px 0;
-    padding-left: 25px;
-    position: relative;
+    margin: 10px 0; /* Espacio vertical entre ítems */
+    padding-left: 25px; /* Espacio para el ícono */
+    position: relative; /* Posicionamiento relativo para el ícono */
 }
 .package ul li::before {
-    content: '✓';
-    position: absolute;
-    left: 0;
-    color: var(--secondary-color);
+    content: '✓'; /* Agrega una marca de verificación */
+    position: absolute; /* Posiciona el ícono */
+    left: 0; /* Alineado a la izquierda */
+    color: var(--secondary-color); /* Color azul */
 }
-/* Social Links */
+
+/* ============================
+   10. INFO SECTION
+   ============================ */
+/* Estilos de la sección "Sobre Nosotros" y redes sociales */
 .social-links {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 20px;
+    display: flex; /* Alinea íconos horizontalmente */
+    justify-content: center; /* Centra los íconos */
+    gap: 30px; /* Espacio entre íconos */
+    margin-top: 20px; /* Espacio superior */
 }
 .social-links a {
-    color: var(--text-light);
-    font-size: 2rem;
-    background: rgba(255, 255, 255, 0.1);
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+    color: var(--text-light); /* Color claro para íconos */
+    font-size: 2rem; /* Tamaño de los íconos */
+    background: rgba(255, 255, 255, 0.1); /* Fondo semitransparente */
+    width: 60px; /* Ancho fijo */
+    height: 60px; /* Alto fijo */
+    border-radius: 50%; /* Forma circular */
+    display: flex; /* Centra el ícono interno */
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease; /* Transiciones al interactuar */
 }
 .social-links a:hover {
-    color: var(--secondary-color);
-    transform: scale(1.2) rotate(360deg);
-    background: rgba(255, 255, 255, 0.2);
+    color: var(--secondary-color); /* Cambia a azul al pasar el mouse */
+    transform: scale(1.2) rotate(360deg); /* Agranda y rota */
+    background: rgba(255, 255, 255, 0.2); /* Fondo más claro */
 }
-/* Estilos para el modal de admin */
-.admin-button {
-    background: var(--primary-color);
-    color: white;
-    border: none;
-    padding: 5px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-}
-.admin-modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.7);
-    z-index: 1000;
-}
-.modal-content {
-    background: var(--background-dark);
-    padding: 20px;
-    border-radius: 10px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    min-width: 300px;
-}
-.modal-content input {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
-    border: 1px solid var(--secondary-color);
-    background: rgba(255,255,255,0.1);
-    color: white;
-}
-.modal-content button {
-    margin: 5px;
-    padding: 8px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    background: var(--secondary-color);
-    color: white;
-}
-.modal-content input {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
-    border: 1px solid var(--secondary-color);
-    background: rgba(255,255,255,0.1);
-    color: white;
-}
-.modal-content button {
-    margin: 5px;
-    padding: 8px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    background: var(--secondary-color);
-    color: white;
-}
-/* Formulario de Contacto */
+
+/* ============================
+   11. FORMULARIO DE CONTACTO
+   ============================ */
+/* Estilos del formulario de contacto */
 #contactForm {
-    max-width: 600px;
-    margin: 0 auto;
+    max-width: 600px; /* Ancho máximo del formulario */
+    margin: 0 auto; /* Centra horizontalmente */
 }
 #contactForm textarea {
-    width: 100%;
-    padding: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(4px);
-    color: var(--text-light);
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
-    margin-bottom: 20px;
+    width: 100%; /* Ocupa todo el ancho disponible */
+    padding: 15px; /* Relleno interno */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Borde sutil */
+    border-radius: 10px; /* Bordes redondeados */
+    background: rgba(255, 255, 255, 0.05); /* Fondo semitransparente */
+    backdrop-filter: blur(4px); /* Efecto de desenfoque */
+    color: var(--text-light); /* Color claro para texto */
+    font-size: 1rem; /* Tamaño de fuente */
+    transition: border-color 0.3s ease; /* Transición suave para borde */
+    margin-bottom: 20px; /* Espacio inferior */
 }
 #contactForm textarea:focus {
-    border-color: var(--secondary-color);
-    outline: none;
+    border-color: var(--secondary-color); /* Borde azul al enfocar */
+    outline: none; /* Elimina contorno por defecto */
 }
 .cta-button, #contactForm button {
-    background: linear-gradient(45deg, var(--accent-color), #e67e22);
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    border-radius: 30px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
-    text-decoration: none;
-    display: inline-block;
+    background: linear-gradient(45deg, var(--accent-color), #e67e22); /* Gradiente rojo-naranja */
+    color: white; /* Texto blanco */
+    border: none; /* Sin borde */
+    padding: 15px 30px; /* Relleno interno */
+    border-radius: 30px; /* Bordes muy redondeados */
+    font-weight: bold; /* Texto en negrita */
+    cursor: pointer; /* Cursor de mano */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones al interactuar */
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3); /* Sombra inicial */
+    text-decoration: none; /* Sin subrayado */
+    display: inline-block; /* Permite ajustes como bloque */
 }
-.cta-button:hover, #contactForm button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
-}
-/* Banner de Noticias */
-/* Eliminar estas secciones si existen */
-/* News Ticker */
-.news-ticker,
-.news-ticker-container,
-.ticker-wrap,
-.ticker,
-.ticker-item,
-.admin-button,
-.admin-modal,
-.modal-content {
-    /* Eliminar estos estilos */
-}
-.news-ticker {
-    background: rgba(0, 0, 0, 0.5);
-    padding: 10px 0;
-    overflow: hidden;
-    position: relative;
-    margin-bottom: 20px;
-}
-.news-ticker-container {
-    max-width: 100%;
-    overflow: hidden;
-}
-.ticker-wrap {
-    width: 100%;
-    overflow: hidden;
-}
-.ticker {
-    display: inline-block;
-    white-space: nowrap;
-    animation: ticker 30s linear infinite;
-}
-.ticker-item {
-    display: inline-block;
-    padding: 0 30px;
-    color: var(--text-light);
-    font-size: 1rem;
-}
-.ticker-item:not(:last-child)::after {
-    content: "•";
-    margin-left: 30px;
-    color: var(--secondary-color);
-}
-@keyframes ticker {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
-}
-.ticker:hover {
-    animation-play-state: paused;
-}
-/* Footer */
-.footer {
+
+#contactMessage {
     text-align: center;
-    padding: 20px;
-    background: var(--primary-color);
-    color: rgba(255,255,255,0.8);
 }
-/* WhatsApp Float */
+
+.cta-button:hover, #contactForm button:hover {
+    transform: translateY(-2px); /* Eleva al pasar el mouse */
+    box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4); /* Sombra más intensa */
+}
+
+/* ============================
+   12. FOOTER
+   ============================ */
+/* Estilos del pie de página */
+.footer {
+    text-align: center; /* Centra el texto */
+    padding: 20px; /* Relleno interno */
+    background: var(--primary-color); /* Fondo oscuro */
+    color: rgba(255,255,255,0.8); /* Texto blanco con transparencia */
+}
+
+/* ============================
+   13. WHATSAPP FLOAT
+   ============================ */
+/* Estilos del botón flotante de WhatsApp */
 .whatsapp-float {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: #25D366;
-    color: white;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
-    animation: pulse 2s infinite;
-    font-size: 2rem;
+    position: fixed; /* Fijo en la pantalla */
+    bottom: 30px; /* Distancia desde abajo */
+    right: 30px; /* Distancia desde la derecha */
+    background-color: #25D366; /* Color verde de WhatsApp */
+    color: white; /* Ícono blanco */
+    width: 60px; /* Ancho fijo */
+    height: 60px; /* Alto fijo */
+    border-radius: 50%; /* Forma circular */
+    display: flex; /* Centra el ícono */
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    text-decoration: none; /* Sin subrayado */
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3); /* Sombra inicial */
+    animation: pulse 2s infinite; /* Animación de pulsación */
+    font-size: 2rem; /* Tamaño del ícono */
 }
 .whatsapp-float:hover {
-    transform: scale(1.1);
-    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+    transform: scale(1.1); /* Agranda al pasar el mouse */
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4); /* Sombra más intensa */
 }
-/* Títulos de secciones */
+
+/* ============================
+   14. TÍTULOS DE SECCIONES
+   ============================ */
+/* Estilos generales para títulos usados en varias secciones */
 h2 {
-    font-size: 2.2rem;
-    margin-bottom: 1.5rem;
-    color: var(--text-light);
-    text-align: center;
-    font-weight: 600;
+    font-size: 2.2rem; /* Tamaño grande */
+    margin-bottom: 1.5rem; /* Espacio inferior */
+    color: var(--text-light); /* Color claro */
+    text-align: center; /* Centrado */
+    font-weight: 600; /* Grosor medio-bold */
 }
 h3 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    color: var(--secondary-color);
+    font-size: 1.8rem; /* Tamaño mediano */
+    margin-bottom: 1rem; /* Espacio inferior */
+    color: var(--secondary-color); /* Color azul */
+}
+
+/* ============================
+   15. AJUSTES PARA MÓVILES
+   ============================ */
+/* Adaptaciones para pantallas pequeñas */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2.5rem; /* Reduce tamaño del título */
+    }
+    .header p {
+        font-size: 1.2rem; /* Reduce tamaño del subtítulo */
+    }
+    h2 {
+        font-size: 1.8rem; /* Reduce tamaño de h2 */
+    }
+    h3 {
+        font-size: 1.5rem; /* Reduce tamaño de h3 */
+    }
+    .radio-section, .info-section, .contact-section, .services-section, .advertising-section {
+        padding: 20px; /* Reduce relleno */
+        margin-bottom: 30px; /* Reduce espacio inferior */
+    }
+    .service-card, .advertising-card {
+        padding: 20px; /* Reduce relleno */
+    }
+    .package {
+        min-width: 100%; /* Ocupa todo el ancho */
+        margin-bottom: 20px; /* Espacio inferior */
+    }
+    .social-links {
+        gap: 15px; /* Reduce espacio entre íconos */
+    }
+    .social-links a {
+        width: 50px; /* Reduce tamaño de íconos */
+        height: 50px; /* Reduce altura */
+        font-size: 1.5rem; /* Reduce tamaño de fuente */
+    }
+    .whatsapp-float {
+        width: 50px; /* Reduce tamaño */
+        height: 50px; /* Reduce altura */
+        font-size: 1.5rem; /* Reduce ícono */
+        bottom: 20px; /* Ajusta posición */
+        right: 20px; /* Ajusta posición */
+    }
 }
