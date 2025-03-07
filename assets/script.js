@@ -10,43 +10,33 @@ const noticias = [
         tiempo: "15 de Enero, 2024",
         url: "noticias/noticia1.html"
     }
-    // Agrega más noticias aquí con la misma estructura cuando sea necesario
+    // Puedes agregar más noticias aquí
 ];
 
 // Función para crear tarjetas de noticias
 function crearTarjetasNoticias() {
     const contenedorNoticias = document.getElementById('news-container');
-    if (!contenedorNoticias) {
-        console.error("El contenedor de noticias no se encontró en el DOM.");
-        return;
-    }
+    if (!contenedorNoticias) return;
     
-    contenedorNoticias.innerHTML = ''; // Limpia el contenedor
+    contenedorNoticias.innerHTML = '';
     noticias.forEach(noticia => {
         agregarTarjetaNoticia(noticia, contenedorNoticias);
     });
 }
 
-// Función para manejar las pestañas de categorías
+// Función para manejar las pestañas de categorías en el encabezado
 function inicializarPestañas() {
-    const pestañas = document.querySelectorAll('.category-tab');
-    if (pestañas.length === 0) {
-        console.error("No se encontraron pestañas de categorías en el DOM.");
-        return;
-    }
+    const pestañas = document.querySelectorAll('nav .category-tab');
     
     pestañas.forEach(pestaña => {
-        pestaña.addEventListener('click', () => {
-            // Remover clase 'active' de todas las pestañas
+        pestaña.addEventListener('click', (e) => {
+            e.preventDefault();
             pestañas.forEach(p => p.classList.remove('active'));
-            // Añadir clase 'active' a la pestaña seleccionada
             pestaña.classList.add('active');
             
-            const categoriaSeleccionada = pestaña.textContent.trim();
+            const categoriaSeleccionada = pestaña.getAttribute('data-category');
             const contenedorNoticias = document.getElementById('news-container');
-            if (!contenedorNoticias) return;
-            
-            contenedorNoticias.innerHTML = ''; // Limpia el contenedor
+            contenedorNoticias.innerHTML = '';
             
             if (categoriaSeleccionada === 'Todas') {
                 noticias.forEach(noticia => {
@@ -97,34 +87,17 @@ function agregarTarjetaNoticia(noticia, contenedor) {
 
 // Inicialización cuando el DOM está listo
 document.addEventListener('DOMContentLoaded', () => {
-    // Mostrar todas las noticias al cargar la página
     crearTarjetasNoticias();
-    
-    // Inicializar las pestañas de categorías
     inicializarPestañas();
     
-    // Manejar el formulario de newsletter
     const formularioNewsletter = document.querySelector('.newsletter-form');
     if (formularioNewsletter) {
         formularioNewsletter.addEventListener('submit', (e) => {
             e.preventDefault();
-            const emailInput = formularioNewsletter.querySelector('input[type="email"]');
-            if (!emailInput) {
-                console.error("No se encontró el campo de email en el formulario.");
-                return;
-            }
-            
-            const email = emailInput.value.trim();
-            if (email === '') {
-                alert('Por favor, ingresa un email válido.');
-                return;
-            }
-            
+            const email = formularioNewsletter.querySelector('input[type="email"]').value;
             console.log(`Email suscrito: ${email}`);
             alert(`¡Gracias por suscribirte! Te has registrado correctamente con el email: ${email}`);
             formularioNewsletter.reset();
         });
-    } else {
-        console.warn("El formulario de newsletter no se encontró en el DOM.");
     }
 });
