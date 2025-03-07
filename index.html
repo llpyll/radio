@@ -3,146 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Radio Online</title>
-    <link rel="stylesheet" href="assets/index.css">
+    <title>Portal de Noticias</title>
+    <link rel="stylesheet" href="assets/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header">
-        <div class="header-content">
-            <div class="header-icons">
-                <i class="fas fa-broadcast-tower animate-pulse"></i>
-                <i class="fas fa-music"></i>
-            </div>
-            <h1 class="animate-title">Radio Online</h1>
-            <h2 class="animate-subtitle glow-text">JAKA FM</h2>
-            <p class="animate-subtitle">
-                <i class="fas fa-circle live-indicator"></i>
-                Disfruta de la mejor música en vivo
-            </p>
+    <header>
+        <div class="header-container">
+            <div class="logo">MiPortalNoticias</div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Inicio</a></li>
+                    <li><a href="#">Política</a></li>
+                    <li><a href="#">Economía</a></li>
+                    <li><a href="#">Deportes</a></li>
+                    <li><a href="#">Tecnología</a></li>
+                    <li><a href="#">Cultura</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <main class="container">
-        <section class="radio-section animate-fade-in">
-            <h2>Escucha en Vivo</h2>
-            <div class="radio-player">
-                <iframe src="https://radiopy.duckdns.org/public/radiotv/embed?theme=dark" 
-                        frameborder="0" 
-                        allowtransparency="true" 
-                        style="width: 100%; min-height: 150px; border: 0;">
-                </iframe>
-            </div>
-            <!-- Widget del Clima -->
-            <div class="weather-widget animate-fade-in">
-                <div id="weather-container">
-                    <div class="weather-info">
-                        <i id="weather-icon" class="fas"></i>
-                        <div class="weather-details">
-                            <h3 id="city">Asunción, Paraguay</h3>
-                            <p id="temperature">Cargando...</p>
-                            <p id="description">Cargando...</p>
-                        </div>
-                    </div>
-                </div>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Las noticias que importan, cuando importan</h1>
+            <p>Mantente informado con las últimas noticias y análisis en profundidad de los eventos más relevantes.</p>
+        </div>
+    </section>
+
+    <main>
+        <div class="category-tabs">
+            <button class="category-tab active">Todas</button>
+            <button class="category-tab">Política</button>
+            <button class="category-tab">Economía</button>
+            <button class="category-tab">Deportes</button>
+            <button class="category-tab">Tecnología</button>
+            <button class="category-tab">Cultura</button>
+        </div>
+
+        <section>
+            <h2 class="section-title">Últimas Noticias</h2>
+            <div class="news-grid" id="news-container">
+                <!-- Las noticias se cargarán dinámicamente con JavaScript -->
             </div>
         </section>
 
-        <!-- Nueva sección de Servicios -->
-        <section class="services-section animate-fade-in">
-            <i class="fas fa-tower-broadcast service-icon"></i>
-            <h2>¿Quieres tu Propia Radio Online?</h2>
-                <h3>Creamos tu Radio Online Profesional</h3>
-                <p>Obtén tu propia radio online con las mismas características y calidad. Incluye:</p>
-                <ul>
-                    <li>Hosting profesional</li>
-                    <li>Panel de control personalizado</li>
-                    <li>Soporte técnico 24/7</li>
-                    <li>Diseño web personalizado</li>
-                </ul>
-                <a href="https://wa.me/+595993539237" class="cta-button">
-                    <i class="fab fa-whatsapp"></i> Contactar por WhatsApp
-                </a>
+        <section class="newsletter">
+            <div class="newsletter-content">
+                <h2>Suscríbete a nuestro boletín</h2>
+                <p>Recibe las noticias más importantes directamente en tu correo electrónico. Sin spam, solo contenido relevante.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Tu correo electrónico" required>
+                    <button type="submit">Suscribirse</button>
+                </form>
             </div>
-        </section>
-
-        <!-- Sección de Publicidad -->
-        <section class="advertising-section animate-fade-in">
-            <h2>Publicidad en Nuestra Radio</h2>
-            <div class="advertising-card">
-                <i class="fas fa-bullhorn"></i>
-                <h3>Promociona tu Negocio</h3>
-                <p>Llega a miles de oyentes con tu mensaje publicitario</p>
-                <div class="ad-packages">
-                    <div class="package">
-                        <h4>Plan Básico</h4>
-                        <div class="price">Gs. 100.000</div>
-                        <ul>
-                            <li>2 menciones diarias</li>
-                            <li>Banner en sitio web</li>
-                            <li>Duración: 1 mes</li>
-                        </ul>
-                    </div>
-                    <div class="package featured">
-                        <h4>Plan Premium</h4>
-                        <div class="price">Gs. 200.000</div>
-                        <ul>
-                            <li>5 menciones diarias</li>
-                            <li>Banner destacado</li>
-                            <li>Publicación en redes sociales</li>
-                            <li>Duración: 1 mes</li>
-                        </ul>
-                    </div>
-                </div>
-                <a href="https://wa.me/+595993539237?text=Hola,%20me%20interesa%20publicitar%20en%20su%20radio" class="cta-button">
-                    <i class="fab fa-whatsapp"></i> Consultar Precios
-                </a>
-            </div>
-        </section>
-
-        <section class="info-section animate-fade-in">
-            <h2>Sobre Nosotros</h2>
-            <p>
-                Somos una radio online dedicada a ofrecer la mejor música y contenido para nuestros oyentes. 
-                ¡Síguenos en nuestras redes sociales y no te pierdas ninguna novedad!
-            </p>
-            <div class="social-links">
-                <a href="https://facebook.com/profile.php?id=100v013220742495" target="_blank">
-                    <i class="fab fa-facebook"></i>
-                </a>
-                <a href="https://instagram.com/lllniko.ovviedolll/" target="_blank">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://x.com/JoseOvi2v6319832" target="_blank">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="https://youtube.com/@nicolavsoviedo9449" target="_blank">
-                    <i class="fab fa-youtube"></i>
-                </a>
-            </div>
-        </section>
-
-        <section class="contact-section animate-fade-in">
-            <h2>Contacto</h2>
-            <form id="contactForm">
-                <label for="message">Escribe tu mensaje:</label>
-                <textarea id="message" name="message" rows="5" placeholder="Escribe aquí tu mensaje..." required></textarea>
-                <button type="submit" id="contactButton">Enviar Mensaje</button>
-            </form>
-            <p id="contactMessage" class="hidden">Gracias por contactarnos. ¡Te responderemos pronto!</p>
         </section>
     </main>
 
-    <footer class="footer">
-        <p>&copy; 2024 Mi Radio Online. Todos los derechos reservados.</p>
+    <footer>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/turadio" target="_blank" class="social-icon">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://twitter.com/turadio" target="_blank" class="social-icon">
+                <i class="fab fa-x-twitter"></i>
+            </a>
+            <a href="https://www.tiktok.com/@turadio" target="_blank" class="social-icon">
+                <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="https://www.youtube.com/@turadio" target="_blank" class="social-icon">
+                <i class="fab fa-youtube"></i>
+            </a>
+        </div>
+        <div class="copyright">
+            <p>© 2025 MiPortalNoticias. Todos los derechos reservados.</p>
+        </div>
     </footer>
 
-    <a href="https://wa.me/+595993539237" target="_blank" class="whatsapp-float pulse">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <script src="assets/index.js"></script>
+    <script src="assets/script.js"></script>
 </body>
 </html>
